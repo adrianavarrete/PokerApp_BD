@@ -1,0 +1,7 @@
+{
+  "name": "PokerApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

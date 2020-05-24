@@ -197,6 +197,16 @@ export class HomePage {
     this.disabled2 = true;
     this.disabled3 = true;
 
+    this.nada = ""
+    this.pareja = ""
+    this.doblePareja = ""
+    this.trio = ""
+    this.escalera = ""
+    this.color = ""
+    this.full = ""
+    this.poker = ""
+    this.escaleraColor = ""
+    this.escaleraReal= ""
     
 
   }

@@ -41,13 +41,13 @@
             <ion-card-content>
               <ion-col size-md="12" offset-md="4">
                 <ion-col size-md="4">
-                  <ion-button color="primary" (click)="play()">Jugar</ion-button>
+                  <ion-button color="primary" disabled = {{disabled1}} (click)="play()">Jugar</ion-button>
                 </ion-col>
                 <ion-col size-md="4">
-                  <ion-button color="primary" disabled>Apostar</ion-button>
+                  <ion-button color="primary" disabled = {{disabled2}} (click)="next()" >Seguir</ion-button>
                 </ion-col>
                 <ion-col size-md="4">
-                  <ion-button color="primary" disabled>Parar</ion-button>
+                  <ion-button color="primary" disabled = {{disabled3}} (click)="stop()">Parar</ion-button>
                 </ion-col>
               </ion-col>
             </ion-card-content>

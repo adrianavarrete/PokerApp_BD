@@ -43,10 +43,33 @@ export class HomePage {
   s4;
   c4;
 
+  nadaColor: string;
+  parejaColor: string;
+  dobleParejaColor: string;
+  trioColor: string;
+  escalera_Color: string;
+  colorColor: string;
+  fullColor: string;
+  pokerColor: string;
+  escaleraColorColor: string;
+  escaleraRealColor: string;
 
 
 
-  constructor(private apiService: ApiService) { }
+
+  constructor(private apiService: ApiService) {
+    this.nadaColor = "dark"
+    this.parejaColor = "dark"
+    this.dobleParejaColor = "dark"
+    this.trioColor = "dark"
+    this.escalera_Color = "dark"
+    this.colorColor = "dark"
+    this.fullColor = "dark"
+    this.pokerColor = "dark"
+    this.escaleraColorColor = "dark"
+    this.escaleraRealColor = "dark"
+
+   }
 
   play() {
 
@@ -81,18 +104,28 @@ export class HomePage {
 
     this.apiService.modelo2cartas(this.s1, this.c1, this.s2, this.c2)
       .subscribe(data => {
-        this.nada = String((data.nothing)*100) + "%"
-        this.pareja = String((data.one_pair)*100) + "%"
-        this.doblePareja = String((data.two_pairs)*100) + "%"
-        this.trio = String((data.trio)*100) + "%"
-        this.escalera = String((data.straight)*100) + "%"
-        this.color = String((data.flush)*100) + "%"
-        this.full = String((data.full)*100) + "%"
-        this.poker = String((data.poker)*100) + "%"
-        this.escaleraColor = String((data.straight_flush)*100) + "%"
-        this.escaleraReal= String((data.royal_flush)*100) + "%"
+        this.nada = this.probabilidad(data.nothing)
+        this.nadaColor = this.changeColor(this.nada)
+        this.pareja = this.probabilidad(data.one_pair)
+        this.parejaColor = this.changeColor(this.pareja)
+        this.doblePareja = this.probabilidad(data.two_pairs)
+        this.dobleParejaColor = this.changeColor(this.doblePareja)
+        this.trio = this.probabilidad(data.trio)
+        this.trioColor = this.changeColor(this.trio)
+        this.escalera = this.probabilidad(data.straight)
+        this.escalera_Color = this.changeColor(this.escalera)
+        this.color = this.probabilidad(data.flush)
+        this.colorColor = this.changeColor(this.color)
+        this.full = this.probabilidad(data.full)
+        this.fullColor = this.changeColor(this.full)
+        this.poker = this.probabilidad(data.poker)
+        this.pokerColor = this.changeColor(this.poker)
+        this.escaleraColor = this.probabilidad(data.straight_flush)
+        this.escaleraColorColor = this.changeColor(this.escaleraColor)
+        this.escaleraReal = this.probabilidad(data.royal_flush)
+        this.escaleraRealColor = this.changeColor(this.escaleraReal)
 
-        console.log(this.pareja)
+        console.log(data)
 
       })
 
@@ -118,22 +151,33 @@ export class HomePage {
         this.s3 = Number(this.mano[2][0])
         this.c3 = Number(this.mano[2][1] + this.mano[2][2])
       }
-  
+
       this.apiService.modelo3cartas(this.s1, this.c1, this.s2, this.c2, this.s3, this.c3)
         .subscribe(data => {
-          this.nada = String((data.nothing)*100) + "%"
-          this.pareja = String((data.one_pair)*100) + "%"
-          this.doblePareja = String((data.two_pairs)*100) + "%"
-          this.trio = String((data.trio)*100) + "%"
-          this.escalera = String((data.straight)*100) + "%"
-          this.color = String((data.flush)*100) + "%"
-          this.full = String((data.full)*100) + "%"
-          this.poker = String((data.poker)*100) + "%"
-          this.escaleraColor = String((data.straight_flush)*100) + "%"
-          this.escaleraReal= String((data.royal_flush)*100) + "%"
-  
-          console.log(this.pareja)
-  
+          this.nada = this.probabilidad(data.nothing)
+          this.nadaColor = this.changeColor(this.nada)
+          this.pareja = this.probabilidad(data.one_pair)
+          this.parejaColor = this.changeColor(this.pareja)
+          this.doblePareja = this.probabilidad(data.two_pairs)
+          this.dobleParejaColor = this.changeColor(this.doblePareja)
+          this.trio = this.probabilidad(data.trio)
+          this.trioColor = this.changeColor(this.trio)
+          this.escalera = this.probabilidad(data.straight)
+          this.escalera_Color = this.changeColor(this.escalera)
+          this.color = this.probabilidad(data.flush)
+          this.colorColor = this.changeColor(this.color)
+          this.full = this.probabilidad(data.full)
+          this.fullColor = this.changeColor(this.full)
+          this.poker = this.probabilidad(data.poker)
+          this.pokerColor = this.changeColor(this.poker)
+          this.escaleraColor = this.probabilidad(data.straight_flush)
+          this.escaleraColorColor = this.changeColor(this.escaleraColor)
+          this.escaleraReal = this.probabilidad(data.royal_flush)
+          this.escaleraRealColor = this.changeColor(this.escaleraReal)
+
+          console.log(data)
+
+
         })
 
     } else if (this.mano.length == 3) {
@@ -148,22 +192,33 @@ export class HomePage {
         this.s4 = Number(this.mano[3][0])
         this.c4 = Number(this.mano[3][1] + this.mano[3][2])
       }
-  
+
       this.apiService.modelo4cartas(this.s1, this.c1, this.s2, this.c2, this.s3, this.c3, this.s4, this.c4)
         .subscribe(data => {
-          this.nada = String((data.nothing)*100) + "%"
-          this.pareja = String((data.one_pair)*100) + "%"
-          this.doblePareja = String((data.two_pairs)*100) + "%"
-          this.trio = String((data.trio)*100) + "%"
-          this.escalera = String((data.straight)*100) + "%"
-          this.color = String((data.flush)*100) + "%"
-          this.full = String((data.full)*100) + "%"
-          this.poker = String((data.poker)*100) + "%"
-          this.escaleraColor = String((data.straight_flush)*100) + "%"
-          this.escaleraReal= String((data.royal_flush)*100) + "%"
-  
-          console.log(this.pareja)
-  
+          this.nada = this.probabilidad(data.nothing)
+          this.nadaColor = this.changeColor(this.nada)
+          this.pareja = this.probabilidad(data.one_pair)
+          this.parejaColor = this.changeColor(this.pareja)
+          this.doblePareja = this.probabilidad(data.two_pairs)
+          this.dobleParejaColor = this.changeColor(this.doblePareja)
+          this.trio = this.probabilidad(data.trio)
+          this.trioColor = this.changeColor(this.trio)
+          this.escalera = this.probabilidad(data.straight)
+          this.escalera_Color = this.changeColor(this.escalera)
+          this.color = this.probabilidad(data.flush)
+          this.colorColor = this.changeColor(this.color)
+          this.full = this.probabilidad(data.full)
+          this.fullColor = this.changeColor(this.full)
+          this.poker = this.probabilidad(data.poker)
+          this.pokerColor = this.changeColor(this.poker)
+          this.escaleraColor = this.probabilidad(data.straight_flush)
+          this.escaleraColorColor = this.changeColor(this.escaleraColor)
+          this.escaleraReal = this.probabilidad(data.royal_flush)
+          this.escaleraRealColor = this.changeColor(this.escaleraReal)
+
+          console.log(data)
+
+
         })
 
 
@@ -206,8 +261,19 @@ export class HomePage {
     this.full = ""
     this.poker = ""
     this.escaleraColor = ""
-    this.escaleraReal= ""
-    
+    this.escaleraReal = ""
+
+    this.nadaColor = "dark"
+    this.parejaColor = "dark"
+    this.dobleParejaColor = "dark"
+    this.trioColor = "dark"
+    this.escalera_Color = "dark"
+    this.colorColor = "dark"
+    this.fullColor = "dark"
+    this.pokerColor = "dark"
+    this.escaleraColorColor = "dark"
+    this.escaleraRealColor = "dark"
+
 
   }
 
@@ -253,6 +319,40 @@ export class HomePage {
 
   randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  probabilidad(dato) {
+
+    if (dato > 0 && dato <= 0.25) {
+      return "Muy poco probable"
+    } else if (dato > 0.25 && dato <= 0.5) {
+      return "Poco probable"
+    } else if (dato > 0.5 && dato <= 0.75) {
+      return "Probable"
+    } else if (dato > 0.75 && dato <= 1) {
+      return "Muy probable"
+    } else {
+      return "-"
+    }
+
+  }
+
+  changeColor(probabilidad) {
+    if (probabilidad == "Muy poco probable") {
+      return "danger"
+    } else if (probabilidad == "Poco probable") {
+      return "warning"
+
+    } else if (probabilidad == "Probable") {
+      return "secondary"
+
+    } else if (probabilidad == "Muy probable") {
+      return "success"
+
+    }else{
+      return "dark"
+    }
+
   }
 
 }

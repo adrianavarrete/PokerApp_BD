@@ -41,13 +41,13 @@
             <ion-card-content>
               <ion-col size-md="12" offset-md="4">
                 <ion-col size-md="4">
-                  <ion-button color="primary" disabled = {{disabled1}} (click)="play()">Jugar</ion-button>
+                  <ion-button color="primary" disabled={{disabled1}} (click)="play()">Jugar</ion-button>
                 </ion-col>
                 <ion-col size-md="4">
-                  <ion-button color="primary" disabled = {{disabled2}} (click)="next()" >Seguir</ion-button>
+                  <ion-button color="primary" disabled={{disabled2}} (click)="next()">Seguir</ion-button>
                 </ion-col>
                 <ion-col size-md="4">
-                  <ion-button color="primary" disabled = {{disabled3}} (click)="stop()">Parar</ion-button>
+                  <ion-button color="primary" disabled={{disabled3}} (click)="stop()">Parar</ion-button>
                 </ion-col>
               </ion-col>
             </ion-card-content>
@@ -64,71 +64,70 @@
               <i-col size-md="1">
                 <ion-card>
                   <ion-card-content>
-                    Nada: {{nada}}
+                    <ion-label [color]="nadaColor">Nada: {{nada}}</ion-label>
                   </ion-card-content>
                 </ion-card>
               </i-col>
               <i-col size-md="1">
                 <ion-card>
                   <ion-card-content>
-                    Pareja: {{pareja}}
+                    <ion-label [color]="parejaColor">Pareja: {{pareja}}</ion-label>
                   </ion-card-content>
                 </ion-card>
               </i-col>
               <i-col size-md="1">
                 <ion-card>
                   <ion-card-content>
-                    Doble Pareja: {{doblePareja}}
+                    <ion-label [color]="dobleParejaColor">Doble Pareja: {{doblePareja}}</ion-label>
                   </ion-card-content>
                 </ion-card>
               </i-col>
               <i-col size-md="1">
                 <ion-card>
                   <ion-card-content>
-                    Trio: {{trio}}
+                    <ion-label [color]="trioColor">Trio: {{trio}}</ion-label>                    
                   </ion-card-content>
                 </ion-card>
               </i-col>
               <i-col size-md="1">
                 <ion-card>
                   <ion-card-content>
-                    Escalera: {{escalera}}
+                    <ion-label [color]="escalera_Color">Escalera: {{escalera}}</ion-label>         
                   </ion-card-content>
                 </ion-card>
               </i-col>
               <i-col size-md="1">
                 <ion-card>
                   <ion-card-content>
-                    Color: {{color}}
+                    <ion-label [color]="colorColor">Color: {{color}}</ion-label>         
                   </ion-card-content>
                 </ion-card>
               </i-col>
               <i-col size-md="1">
                 <ion-card>
                   <ion-card-content>
-                    Full: {{full}}
+                    <ion-label [color]="fullColor">Full: {{full}}</ion-label>         
                   </ion-card-content>
                 </ion-card>
               </i-col>
               <i-col size-md="1">
                 <ion-card>
                   <ion-card-content>
-                    Poker: {{poker}}
+                    <ion-label [color]="pokerColor">Poker: {{poker}}</ion-label>         
                   </ion-card-content>
                 </ion-card>
               </i-col>
               <i-col size-md="1">
                 <ion-card>
                   <ion-card-content>
-                    Escalera de color: {{escaleraColor}}
+                    <ion-label [color]="escaleraColorColor">Escalera de color: {{escaleraColor}}</ion-label>         
                   </ion-card-content>
                 </ion-card>
               </i-col>
-
               <i-col size-md="1">
                 <ion-card>
                   <ion-card-content>
-                    Escalera real: {{escaleraReal}}
+                    <ion-label [color]="escaleraRealColor">Escalera real: {{escaleraReal}}</ion-label>         
                   </ion-card-content>
                 </ion-card>
               </i-col>
